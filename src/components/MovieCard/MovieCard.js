@@ -24,7 +24,7 @@ function MovieCard({ movie,favStatus,handleFav }) {
           <Button variant="primary" onClick={()=>history.push("/details/"+movie.id)}>Details</Button>
           <Button
             variant="light"
-            style={{ marginLeft: 100 }}
+            style={{ marginLeft: 105 }}
             onClick={() => handleFav(movie.id)}
           >
             <FontAwesomeIcon icon={favStatus? faHeart:farHeart} color="red" />
