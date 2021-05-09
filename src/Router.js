@@ -2,12 +2,16 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Navi } from "./components";
 import { Route, Switch } from "react-router-dom";
-import { Homepage, MovieDetails } from "./pages";
+import { Homepage, MovieDetails,SignIn } from "./pages";
 import axios from "axios";
 
 const baseURL = "https://api.themoviedb.org/3/search/movie";
 
 const Router = () => {
+
+  const [favlist,setFavlist]=useState([])
+
+
   const [searchedValue,setSearchedValue]=useState("matrix")
   const [movieList,setMovieList]=useState([])
 
@@ -23,6 +27,15 @@ const Router = () => {
       }).then(res=>setMovieList(res?.data?.results))
   }
 
+  const handleFav=(id)=>{
+    if(favlist.includes(id)){
+      const filtered=favlist.filter(movieId=>movieId!==id)
+      setFavlist(filtered)
+    }else{
+      setFavlist(state=>[...state,id])
+    }
+}
+
   useEffect(()=>{
       searchMovie()
   },[searchedValue])
@@ -33,9 +46,11 @@ const Router = () => {
       <Navi setSearchedValue={setSearchedValue} />
       <Switch>
         <Route exact path="/">
-          <Homepage movieList={movieList} searchMovie={searchMovie}/>
+          <Homepage movieList={movieList} searchMovie={searchMovie} handleFav={handleFav} favlist={favlist}/>
         </Route>
         <Route path="/details/:id" component={MovieDetails}/>
+        <Route path="/signin" component={SignIn}/>
+        
       </Switch>
     </div>
   );

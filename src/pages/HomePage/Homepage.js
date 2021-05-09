@@ -4,18 +4,9 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ReactPaginate from "react-paginate";
+import Proptypes from "prop-types"
 
 function Homepage(props) {
- const [favlist,setFavlist]=useState([])
-
- const handleFav=(id)=>{
-      if(favlist.includes(id)){
-        const filtered=favlist.filter(movieId=>movieId!==id)
-        setFavlist(filtered)
-      }else{
-        setFavlist(state=>[...state,id])
-      }
- }
 
 
   return (
@@ -29,8 +20,8 @@ function Homepage(props) {
       />
       <Row className="justify-content-md-center">
         {props.movieList.map((movie) => (
-          <Col className="mt-5">
-            <MovieCard movie={movie} favStatus={favlist.includes(movie.id)? true:false} handleFav={handleFav}/>
+          <Col className="mt-5" key={movie.id}>
+            <MovieCard movie={movie} favStatus={props.favlist.includes(movie.id)? true:false} handleFav={props.handleFav}/>
           </Col>
         ))}
       </Row>
@@ -44,5 +35,13 @@ function Homepage(props) {
     </Container>
   );
 }
+
+Homepage.propTypes={
+  favlist:Proptypes.array,
+  handleFav:Proptypes.func,
+  searchMovie:Proptypes.func,
+  movieList:Proptypes.array,
+}
+
 
 export { Homepage };
