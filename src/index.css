@@ -30,3 +30,39 @@ code {
   color: brown;
 }
 
+.Card :hover{
+  /* background-color: red;
+  filter:blur(6px); */
+}
+
+.Cardbody {
+  /* height: 260px; */
+  /* background: red; */
+  transition: 0.25s;
+  
+}
+
+.Card:hover .Cardbody{
+  /* background: red; */
+  transform-origin: 50% 100%;
+  /* transform: translateY(-300px); */
+  transform: scale(2.5,2.5);
+  /* height: 500px; */
+  
+
+  
+}
+
+.Card:hover .CardImg{
+  filter:blur(6px);
+}
+/* .Cardtitle{
+  /* background: red;
+  transition: height 2s; */
+/* } */
+
+/* .Cardtitle:hover{
+  /* height: 650px; */
+  /* transform: translateY(650px); */
+
+/* } */ 
