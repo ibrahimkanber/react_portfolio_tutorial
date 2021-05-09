@@ -14,7 +14,7 @@ function Navi(props) {
       props.setSearchedValue(search)
     }
     return (
-      <div style={{marginBottom:90}}>
+      <div style={{marginBottom:70}}>
         <Navbar bg="dark" variant="dark" fixed="top">
         <Navbar.Brand href="#home">Navbar</Navbar.Brand>
         <Nav className="mr-auto">
