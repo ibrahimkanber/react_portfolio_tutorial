@@ -10,6 +10,7 @@ import defaultimg from "../../defaultimg.jpg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faList } from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
 import PropTypes from "prop-types";
@@ -56,11 +57,12 @@ function MovieCard({ movie, favStatus, handleFav }) {
             src={movie.poster_path ? imgUrl : defaultimg}
             className="CardImg"
           />
-          <Card.Body style={{ height: 41 }} className="Cardbody">
-            {/* <Card.Title className= "Cardtitle">{movie.title}</Card.Title> */}
-            {/* <Card.Text>{movie.overview.slice(0, 120)}...</Card.Text> */}
+           <Card.Title style={{ height: 0 }} className= "Avarage"> 
+             {movie.vote_average}</Card.Title>
+             <FontAwesomeIcon icon={faStar} color="red" className="Icon"/>
+           <Card.Title style={{ height: 0 }} className= "Cardtitle">{movie.title}</Card.Title>
+          <Card.Body style={{ height: 0 }} className="Cardbody">
             <Row className="justify-content-center pt-1">
-              {/* <Card.Title className= "Cardtitle">{movie.title}</Card.Title> */}
               <OverlayTrigger
                 placement="top"
                 delay={{ show: 150, hide: 300 }}
@@ -69,9 +71,7 @@ function MovieCard({ movie, favStatus, handleFav }) {
                 <Button
                   style={{
                     position: "relative",
-                    bottom: 23.5,
-                    marginTop: 4,
-                    marginLeft: 5,
+                    bottom: 23.5,                   
                     marginRight: 5.5,
                     backgroundColor: "#ffc300",
                     border: "none",
@@ -90,10 +90,8 @@ function MovieCard({ movie, favStatus, handleFav }) {
                   variant="light"
                   style={{
                     position: "relative",
-                    bottom: 23.5,
-                    marginTop: 4,
-                    marginLeft: 4.5,
-                    marginRight: 4.5,
+                    bottom: 23.5,                    
+                    
                     backgroundColor: "#ffc300",
                     border: "none",
                   }}
@@ -116,9 +114,7 @@ function MovieCard({ movie, favStatus, handleFav }) {
                   style={{
                     position: "relative",
                     bottom: 23.5,
-                    marginTop: 4,
                     marginLeft: 5.5,
-                    marginRight: 5,
                     backgroundColor: "#ffc300",
                     border: "none",
                   }}
