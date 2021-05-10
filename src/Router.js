@@ -26,6 +26,7 @@ const Router = () => {
        
       }).then(res=>setMovieList(res?.data?.results))
   }
+  console.log(movieList);
 
   const handleFav=(id)=>{
     if(favlist.includes(id)){
