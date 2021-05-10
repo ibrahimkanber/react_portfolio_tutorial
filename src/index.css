@@ -99,7 +99,6 @@ code {
   left: 37%;
   display: flex;
   justify-content: center;
-  
   filter:opacity(0)
 }
 .Card:hover .Icon{
