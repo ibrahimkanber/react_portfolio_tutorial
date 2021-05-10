@@ -52,7 +52,7 @@ function MovieCard({ movie, favStatus, handleFav }) {
           className="Card"
         >
           <CardImg
-            style={{ borderTopRightRadius: 10, borderTopLeftRadius: 10 }}
+            style={{ borderRadius:10 }}
             variant="top"
             src={movie.poster_path ? imgUrl : defaultimg}
             className="CardImg"

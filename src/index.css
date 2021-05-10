@@ -32,6 +32,9 @@ code {
 
 
 .Cardbody {
+  position: absolute;
+  bottom: 0;
+  left:30%;
   transition: 0.25s;
   
 }
@@ -47,8 +50,10 @@ code {
 }
 
 .Cardtitle{
-  position: relative;
+  position: absolute;
   bottom: 300px;
+  left: 0; 
+  width: 100%; 
   justify-content: center;
   text-align: center;
   filter:opacity(0)
@@ -68,7 +73,7 @@ code {
 
 .Avarage{
   position: absolute;
-  bottom: 520px;
+  bottom: 460px;
   left: 46%;
   
   filter:opacity(0)
@@ -90,7 +95,7 @@ code {
 
 .Icon{
   position: absolute;
-  bottom: 480px;
+  bottom: 420px;
   left: 37%;
   display: flex;
   justify-content: center;
