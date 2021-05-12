@@ -7,6 +7,8 @@ import axios from "axios";
 
 const baseURL = "https://api.themoviedb.org/3/search/movie";
 
+const isLogin=false
+
 const Router = () => {
 
   const [favlist,setFavlist]=useState([])
@@ -41,6 +43,9 @@ const Router = () => {
       searchMovie()
   },[searchedValue])
 
+  const Favorites=()=>{
+    return(<p>favorites</p>)
+  }
 
   return (
     <div>
@@ -50,7 +55,8 @@ const Router = () => {
           <Homepage movieList={movieList} searchMovie={searchMovie} handleFav={handleFav} favlist={favlist}/>
         </Route>
         <Route path="/details/:id" component={MovieDetails}/>
-        <Route path="/signin" component={SignIn}/>
+        <Route path="/signin" component={ SignIn}/>
+        <Route path="/favorites" component={isLogin? Favorites : SignIn}/>
         
       </Switch>
     </div>
