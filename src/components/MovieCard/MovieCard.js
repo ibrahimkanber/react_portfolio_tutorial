@@ -47,7 +47,7 @@ function MovieCard({ movie, favStatus, handleFav }) {
             width: 350,
             backgroundColor: "#f8961e",
             borderRadius: 10,
-            marginBottom: 20,
+            marginBottom: 21,
           }}
           className="Card"
         >
