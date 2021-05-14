@@ -1,8 +1,6 @@
 import React,{useState} from "react";
 import { MovieCard } from "../../components";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import ReactPaginate from "react-paginate";
 import Proptypes from "prop-types"
 
@@ -10,29 +8,34 @@ function Homepage(props) {
 
 
   return (
-    <Container fluid="md">
+    <div style={{backgroundColor:"#003049"}}>
+    
+    <Container className="mb-2 pt-2">
         <ReactPaginate
         pageCount={Math.ceil(props.movieList.length / 5)}
         pageRangeDisplayed={2}
         marginPagesDisplayed={1}
         onPageChange={(data) => props.searchMovie(data.selected + 1)}
         containerClassName="pagination"
-      />
-      <Row className="justify-content-md-center">
+      /></Container>
+       <div style={{flexWrap:"wrap",display:"flex",justifyContent:"center"}}  >
         {props.movieList.map((movie) => (
-          <Col className="mt-5" key={movie.id}>
-            <MovieCard movie={movie} favStatus={props.favlist.includes(movie.id)? true:false} handleFav={props.handleFav}/>
-          </Col>
+          
+            <MovieCard movie={movie} favStatus={props.favlist.includes(movie.id)? true:false} handleFav={props.handleFav} key={movie.id}/>
+          
         ))}
-      </Row>
+        </div>
+      
+      <Container className="pb-4">
       <ReactPaginate
         pageCount={Math.ceil(props.movieList.length / 5)}
         pageRangeDisplayed={2}
         marginPagesDisplayed={1}
         onPageChange={(data) => props.searchMovie(data.selected + 1)}
         containerClassName="pagination"
-      />
-    </Container>
+      /></Container >
+    
+    </div>
   );
 }
 

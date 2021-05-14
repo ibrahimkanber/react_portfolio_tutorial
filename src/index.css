@@ -30,3 +30,84 @@ code {
   color: brown;
 }
 
+
+.Cardbody {
+  position: absolute;
+  bottom: 0;
+  left:30%;
+  transition: 0.25s;
+  
+}
+
+.Card:hover .Cardbody{
+  transform-origin: 50% 100%;
+  transform: scale(2.5,2.5);
+}
+
+.Card:hover .CardImg{
+  filter:blur(15px);
+  
+}
+
+.Cardtitle{
+  position: absolute;
+  bottom: 300px;
+  left: 0; 
+  width: 100%; 
+  justify-content: center;
+  text-align: center;
+  filter:opacity(0)
+}
+.Card:hover .Cardtitle{
+  font-size: x-large;
+  font-weight: bold;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #deff0a;
+  
+  background-color: #143642;
+  border-radius: 10px;
+  display: flex;
+  text-align: center;
+  filter:opacity(100)
+} 
+
+.Avarage{
+  position: absolute;
+  bottom: 460px;
+  left: 46%;
+  
+  filter:opacity(0)
+}
+.Card:hover .Avarage{
+  font-size: large;
+  font-weight: bold;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #deff0a;
+  justify-content: center;
+  background-color: #143642;
+  border-radius: 10px;
+  display: flex;
+  text-align: center;
+  filter:opacity(100);
+  z-index: 1;
+  
+} 
+
+.Icon{
+  position: absolute;
+  bottom: 420px;
+  left: 37%;
+  display: flex;
+  justify-content: center;
+  filter:opacity(0)
+}
+.Card:hover .Icon{
+  font-size: 80px;
+  font-weight: bold;
+  justify-content: center;
+  border-radius: 10px;
+  display: flex;
+  text-align: center;
+  filter:opacity(100)
+} 
+
