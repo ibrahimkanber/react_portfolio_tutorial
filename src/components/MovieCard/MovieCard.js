@@ -15,10 +15,15 @@ import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
 import PropTypes from "prop-types";
 import { CardImg } from "react-bootstrap";
+import {useDispatch} from "react-redux"
+import {addToFavorites} from "../../redux/action-creators/actions"
 
 const baseUrl = `https://www.themoviedb.org/t/p/w220_and_h330_face/`;
 
 function MovieCard({ movie, favStatus, handleFav }) {
+
+  const dispatch=useDispatch()
+
   const history = useHistory();
 
   const renderTooltip = (props) => (
@@ -95,7 +100,8 @@ function MovieCard({ movie, favStatus, handleFav }) {
                     backgroundColor: "#ffc300",
                     border: "none",
                   }}
-                  onClick={() => handleFav(movie.id)}
+                  onClick={() => {handleFav(movie.id);
+                  dispatch(addToFavorites(movie))}}
                 >
                   <FontAwesomeIcon
                     icon={favStatus ? faHeart : farHeart}

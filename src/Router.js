@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Navi } from "./components";
 import { Route, Switch } from "react-router-dom";
-import { Homepage, MovieDetails,SignIn } from "./pages";
+import { Homepage, MovieDetails,SignIn,Favorites } from "./pages";
 import axios from "axios";
 
 const baseURL = "https://api.themoviedb.org/3/search/movie";
@@ -26,7 +26,7 @@ const Router = () => {
        
       }).then(res=>setMovieList(res?.data?.results))
   }
-  console.log(movieList);
+  // console.log(movieList);
 
   const handleFav=(id)=>{
     if(favlist.includes(id)){
@@ -51,8 +51,12 @@ const Router = () => {
         </Route>
         <Route path="/details/:id" component={MovieDetails}/>
         <Route path="/signin" component={SignIn}/>
+        <Route exact path="/favorites">
+          <Favorites searchedValue={searchedValue} handleFav={handleFav}/>
+        </Route>
         
       </Switch>
+      {console.log(searchedValue)}
     </div>
   );
 };

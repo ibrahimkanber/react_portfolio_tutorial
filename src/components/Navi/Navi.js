@@ -23,6 +23,7 @@ function Navi(props) {
           </Nav.Link>
          
           <Nav.Link ><Button onClick={()=>history.push("/signin")}>Sign in</Button></Nav.Link>
+          <Nav.Link ><Button onClick={()=>history.push("/favorites")}>Favorites</Button></Nav.Link>
         </Nav>
         <Form inline onSubmit={handleSubmit}>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={handleChange} />
